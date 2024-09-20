@@ -1,5 +1,6 @@
 import os
 import google.generativeai as anna
+import streamlit as st
 
 anna.configure(api_key=os.environ['GOOGLE_API_KEY'])
 
