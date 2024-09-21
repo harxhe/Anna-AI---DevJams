@@ -1,0 +1,51 @@
+from flask import Flask, render_template, request, jsonify
+from langchain_groq import ChatGroq
+
+app = Flask(__name__)
+
+# Load initial data from file
+with open('data.txt', 'r') as file:
+    initial_prompt = file.read().strip()
+
+# Initialize the language model
+llm = ChatGroq(
+    model="mixtral-8x7b-32768",
+    temperature=0.0,
+    max_retries=2,
+    api_key="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"
+)
+
+# Initial conversation setup
+messages = [
+    ("system", initial_prompt),
+    ("human", "Hello ANNA, what can you do?")
+]
+
+# Print the initial interaction with the bot to the console
+initial_response = llm.invoke(messages)
+print(initial_response.content)
+messages.append(("ai", initial_response.content))
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/chat', methods=['POST'])
+def chat():
+    user_message = request.form.get('message')
+    if not user_message:
+        return jsonify({'response': 'Please enter a message.'}), 400
+
+    try:
+        messages.append(("human", user_message))
+        response = llm.invoke(messages)
+        response_text = response.content if hasattr(response, 'content') else str(response)
+        messages.append(("ai", response_text))
+
+        return jsonify({'response': response_text})
+    except Exception as e:
+        return jsonify({'response': f'An error occurred: {e}'}), 500
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
