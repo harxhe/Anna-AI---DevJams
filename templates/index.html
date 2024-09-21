@@ -9,9 +9,14 @@
     <!-- Font Awesome CSS via CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
+        @font-face {
+            font-family: 'Back to Black Demo';
+            src: url('fonts/Back-to-Black-Demo.ttf') format('truetype');
+        }
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
+            background-image: url('https://cdn.wallpapersafari.com/33/48/PCzhqd.jpg');
             height: 100vh;
             margin: 0;
         }
@@ -26,11 +31,12 @@
             flex-direction: column;
         }
         .chat-box-header {
-            background: #62C938;
+            background: #63666A;
             color: white;
             padding: 15px;
             text-align: center;
             position: relative;
+            border-radius: 10px;
         }
         .chat-box-header .fa-times {
             position: absolute;
@@ -44,7 +50,7 @@
             padding: 10px;
         }
         .chat-box-body-send p {
-            background: #62C938;
+            background: #63666A;
             color: white;
             padding: 10px;
             border-radius: 10px;
@@ -75,7 +81,7 @@
         .chat-box-footer .send {
             cursor: pointer;
             font-size: 20px;
-            color: #007bff;
+            color: #63666A;
         }
     </style>
 </head>
@@ -84,7 +90,7 @@
 <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
     <div class="chat-box">
         <div class="chat-box-header">
-            <h3>ANNA AI</h3>
+            <h3 >ANNA AI</h3>
             <i class="fa fa-times" onclick="document.querySelector('.chat-box').style.display='none';"></i>
         </div>
         <div class="chat-box-body" id="chat-body">
