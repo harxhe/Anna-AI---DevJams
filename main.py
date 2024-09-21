@@ -1,13 +1,22 @@
 import tkinter as tk
 import os
 import google.generativeai as anna
-os.environ['GOOGLE_API_KEY'] = "AIzaSyAMQzaOD3NvwRRqyZOyj4zdzYz0zH4iSF4"
-anna.configure(api_key=os.environ['GOOGLE_API_KEY'])
+import getpass
+
+
+if "ANNA_KEY" not in os.environ:
+    os.environ["ANNA_KEY"] = getpass.getpass("Enter your Google AI API key: ")
+
+anna.configure(api_key=os.environ['ANNA_KEY'])
+
 def bot_response(user_input):
     model = anna.GenerativeModel('gemini-pro')
     chat = model.start_chat(history=[])
     response = chat.send_message(user_input)
     return f"ANNA: {response.text}"
+
+
+
 def on_enter(event):
     user_input = entry.get()
     if user_input:
