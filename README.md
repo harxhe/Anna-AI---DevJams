@@ -1,6 +1,8 @@
-# TITLE : ANNA AI
+# ANNA AI
 
-**DESCRIPTION** : This is a simple Chatbot built using Python and Gemini AI. The bot can respond to user commands and provide information or perform specific tasks based on the commands given. This chatbot can handle a variety of commands, making it a useful tool for both casual users and developers.
+**DESCRIPTION** 
+
+This is a simple Chatbot built using Python and Gemini AI. The bot can respond to user commands and provide information or perform specific tasks based on the commands given. This chatbot can handle a variety of commands, making it a useful tool for both casual users and developers.
 An AI chatbot based on VIT. Anna AI gives information about different courses and curriculum in VIT.
 
 **FEATURE**:  
@@ -13,6 +15,7 @@ An AI chatbot based on VIT. Anna AI gives information about different courses an
 
 
 **OPERATION** : 
+
 This is a simple Flask-based chatbot named ANNA AI. This application allows users to have a conversation with a chatbot named "Anna," which assists college juniors with their doubts using a large language model (LLM) powered by Groq. We used langchain to give prompt to the system to respond to the user's queries about VIT. We have given certain data about VIT to the prompt so that the model has some context about VIT and the aspects associated with it 
 
 We are using Groq API to authenticate the connection to the Groq language model and we used Flask to create a simple web application that allows interaction between a user and a chatbot and to manage the web interface and handles communication between the frontend (user) and the backend (the chatbot).
