@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 # Load initial data from file
 with open('data.txt', 'r') as file:
-    initial_prompt = file.read().strip()
+    text = file.read()
 
 #Get the api key
 key=getpass.getpass("Enter your Google AI API key: ")
@@ -21,8 +21,8 @@ llm = ChatGroq(
 
 # Initial conversation setup
 messages = [
-    ("system", initial_prompt),
-    ("human", "Hello ANNA, what can you do?")
+    ("system", f"You are a helpful bot named anna. Your task is to help your college juniors with their doubts. Here is some additional context from a file: {text} "),
+    ("human", "Hello ")
 ]
 
 # Print the initial interaction with the bot to the console
