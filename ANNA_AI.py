@@ -9,20 +9,21 @@ with open('data.txt', 'r') as file:
     text = file.read()
 
 #Get the api key
-key=getpass.getpass("Enter your Google AI API key: ")
+#key=getpass.getpass("Enter your Google AI API key: ")
 
 # Initialize the language model
 llm = ChatGroq(
     model="mixtral-8x7b-32768",
     temperature=0.0,
     max_retries=2,
-    api_key=key
+    api_key="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"
 )
 
 # Initial conversation setup
+#user_input=input("Hello, Welcome to ANNA AI. How can I help you today?")
 messages = [
     ("system", f"You are a helpful bot named anna. Your task is to help your college juniors with their doubts. Here is some additional context from a file: {text} "),
-    ("human", "Hello ")
+    ("human", "hello")
 ]
 
 # Print the initial interaction with the bot to the console
