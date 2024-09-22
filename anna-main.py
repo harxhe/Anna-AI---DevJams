@@ -9,7 +9,7 @@ with open('data.txt', 'r') as file:
     text = file.read()
 
 #Get the api key
-key=getpass.getpass("Enter your Google AI API key: ")
+key=getpass.getpass("Enter your Groq API key: ")
 
 # Initialize the language model
 llm = ChatGroq(
