@@ -9,14 +9,14 @@ with open('data.txt', 'r') as file:
     text = file.read()
 
 #Get the api key
-#key=getpass.getpass("Enter your Google AI API key: ")
+key=getpass.getpass("Enter your Google AI API key: ")
 
 # Initialize the language model
 llm = ChatGroq(
     model="mixtral-8x7b-32768",
     temperature=0.0,
     max_retries=2,
-    api_key="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"
+    api_key=key
 )
 
 # Initial conversation setup
