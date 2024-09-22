@@ -20,6 +20,9 @@ This is a simple Flask-based chatbot named ANNA AI. This application allows user
 
 We are using Groq API to authenticate the connection to the Groq language model and we used Flask to create a simple web application that allows interaction between a user and a chatbot and to manage the web interface and handles communication between the frontend (user) and the backend (the chatbot).
 
-
+### Tech Stack:
+- **Backend**: Flask
+- **LLM**: Groq (integrated with LangChain for prompt structuring)
+- **Programming Language**: Python
 
 
