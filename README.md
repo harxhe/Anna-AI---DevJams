@@ -2,7 +2,7 @@
 
 **DESCRIPTION** 
 
-This is a simple Chatbot built using Python and Gnox AI. The bot can respond to user commands and provide information or perform specific tasks based on the commands given. This chatbot can handle a variety of commands, making it a useful tool for both casual users and developers.
+This is a simple Chatbot built using Python and Groq AI. The bot can respond to user commands and provide information or perform specific tasks based on the commands given. This chatbot can handle a variety of commands, making it a useful tool for both casual users and developers.
 An AI chatbot based on VIT. Anna AI gives information about different courses and curriculum in VIT.
 
 ![alt text](<Screenshot 2024-09-22 091608.png>)
